@@ -1,0 +1,20 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+LIBRARY work;
+ENTITY VHDL_polarity_controller IS
+		PORT(
+				IN1, IN2, IN3, IN4, POLARITY_CNTRL : IN STD_LOGIC;
+				OUT1, OUT2, OUT3, OUT4 : OUT STD_LOGIC
+		);
+		
+END ENTITY VHDL_polarity_controller;
+
+ARCHITECTURE simple_gates OF VHDL_polarity_controller IS
+BEGIN
+
+OUT1 <= POLARITY_CNTRL XNOR IN1;
+OUT2 <= POLARITY_CNTRL XNOR IN2;
+OUT3 <= POLARITY_CNTRL XNOR IN3;
+OUT4 <= POLARITY_CNTRL XNOR IN4;
+
+END ARCHITECTURE simple_gates;
